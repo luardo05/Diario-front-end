@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrar Evento - Diário Pessoal</title>
     <!-- Link para o arquivo CSS principal -->
+    <script src="js/authGuard.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
     <header class="main-header">
@@ -37,11 +40,16 @@
                 <label for="photo">Foto Principal do Dia</label>
                 <input type="file" id="photo" name="photo" accept="image/*" required>
             </div>
-            
+
             <button type="submit" class="btn">Salvar Registro</button>
 
         </form>
     </main>
 
+    <script src="js/toast.js"></script>
+    <script src="js/services/api.js"></script>
+    <script src="js/eventForm.js"></script>
+
 </body>
+
 </html>

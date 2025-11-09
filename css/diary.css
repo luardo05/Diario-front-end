@@ -2,7 +2,8 @@
 
 .header-actions {
     display: flex;
-    gap: 0.8rem; /* Espaço entre os botões */
+    gap: 0.8rem;
+    /* Espaço entre os botões */
 }
 
 /* --- Grade de Eventos Responsiva (Mobile-First) --- */
@@ -17,7 +18,8 @@
     background-color: var(--card-background);
     border-radius: 16px;
     box-shadow: var(--shadow);
-    overflow: hidden; /* Garante que a imagem não saia do card */
+    overflow: hidden;
+    /* Garante que a imagem não saia do card */
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease;
@@ -27,12 +29,20 @@
     transform: translateY(-5px);
 }
 
+/* --- CÓDIGO ALTERADO --- */
+/* Esta seção foi modificada para atender aos seus requisitos */
 .event-card img {
     width: 100%;
-    height: 200px; /* Altura fixa para a imagem */
-    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+    /* Faz a imagem ocupar 100% da largura do card */
+    max-width: 100%;
+    /* Garante que a imagem nunca seja maior que o card */
+    height: auto;
+    /* A altura se ajustará automaticamente para manter a proporção */
     display: block;
+    /* Remove espaços extras abaixo da imagem */
 }
+
+/* --- FIM DA ALTERAÇÃO --- */
 
 .event-info {
     padding: 1.5rem;
@@ -54,19 +64,22 @@
 }
 
 .event-description {
-    flex-grow: 1; /* Faz a descrição ocupar o espaço disponível */
+    flex-grow: 1;
+    /* Faz a descrição ocupar o espaço disponível */
     margin-bottom: 1.5rem;
 }
 
 .event-actions {
     display: flex;
     gap: 0.8rem;
-    margin-top: auto; /* Empurra os botões para o final do card */
+    margin-top: auto;
+    /* Empurra os botões para o final do card */
 }
 
 .event-actions .btn-edit,
 .event-actions .btn-delete {
-    flex: 1; /* Faz os botões dividirem o espaço */
+    flex: 1;
+    /* Faz os botões dividirem o espaço */
     padding: 0.6rem;
     border-radius: 8px;
     background: none;
@@ -77,28 +90,59 @@
 }
 
 .event-actions .btn-edit:hover {
-    background-color: #E3F2FD; /* Azul claro */
+    background-color: #E3F2FD;
+    /* Azul claro */
     border-color: #90CAF9;
 }
 
 .event-actions .btn-delete:hover {
-    background-color: #FFEBEE; /* Rosa bem claro */
+    background-color: #FFEBEE;
+    /* Rosa bem claro */
     border-color: #EF9A9A;
-    color: #C62828; /* Vermelho escuro */
+    color: #C62828;
+    /* Vermelho escuro */
 }
 
-
-/* --- Media Queries para Telas Maiores (Tablet e Desktop) --- */
-@media (min-width: 600px) {
+/* --- CÓDIGO ALTERADO --- */
+/* As Media Queries foram substituídas por uma versão mais detalhada */
+/* Telas de smartphones maiores e tablets na vertical (a partir de 576px) */
+@media (min-width: 576px) {
     .events-grid {
-        /* Duas colunas para telas um pouco maiores */
+        /* Mantém 1 coluna, mas com mais espaço */
+        gap: 2rem;
+    }
+}
+
+/* Telas de tablets na horizontal e telas pequenas de laptop (a partir de 768px) */
+@media (min-width: 768px) {
+    .events-grid {
+        /* Muda para 2 colunas */
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
+/* Telas de desktop padrão (a partir de 992px) */
 @media (min-width: 992px) {
     .events-grid {
-        /* Três colunas para telas de desktop */
+        /* Muda para 3 colunas */
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
+/* Telas grandes de desktop (a partir de 1200px) */
+@media (min-width: 1200px) {
+    .events-grid {
+        /* Continua com 3 colunas, mas com mais espaço */
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+    }
+}
+
+.loading-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    padding: 3rem 0;
+}
+
+/* --- FIM DA ALTERAÇÃO --- */
