@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Diário</title>
+    <!-- Links para os arquivos CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/diary.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <h1>Meu Diário</h1>
+        <div class="header-actions">
+            <a href="event-form.html" class="btn">Adicionar Novo Evento</a>
+            <button id="logout-button" class="btn btn-secondary">Logout</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Os eventos do diário serão inseridos aqui dinamicamente pelo JavaScript -->
+        <div id="events-container" class="events-grid">
+            <!-- Exemplo de como um card de evento pode parecer (será gerado via JS) -->
+            <!-- 
+            <div class="event-card">
+                <img src="http://via.placeholder.com/400x300" alt="Foto do evento">
+                <div class="event-info">
+                    <h2>Título do Evento</h2>
+                    <p class="event-date">08/11/2025</p>
+                    <p class="event-description">Descrição do que aconteceu neste dia maravilhoso...</p>
+                    <div class="event-actions">
+                        <button class="btn-edit">Editar</button>
+                        <button class="btn-delete">Excluir</button>
+                    </div>
+                </div>
+            </div> 
+            -->
+        </div>
+    </main>
+
+</body>
+</html>

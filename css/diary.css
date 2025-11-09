@@ -1,0 +1,104 @@
+/* --- Estilos da Página do Diário --- */
+
+.header-actions {
+    display: flex;
+    gap: 0.8rem; /* Espaço entre os botões */
+}
+
+/* --- Grade de Eventos Responsiva (Mobile-First) --- */
+.events-grid {
+    display: grid;
+    /* Começa com uma única coluna no celular */
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.event-card {
+    background-color: var(--card-background);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    overflow: hidden; /* Garante que a imagem não saia do card */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+}
+
+.event-card img {
+    width: 100%;
+    height: 200px; /* Altura fixa para a imagem */
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+    display: block;
+}
+
+.event-info {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-info h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #444;
+    margin-bottom: 0.25rem;
+}
+
+.event-date {
+    font-size: 0.9rem;
+    color: #999;
+    margin-bottom: 1rem;
+}
+
+.event-description {
+    flex-grow: 1; /* Faz a descrição ocupar o espaço disponível */
+    margin-bottom: 1.5rem;
+}
+
+.event-actions {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: auto; /* Empurra os botões para o final do card */
+}
+
+.event-actions .btn-edit,
+.event-actions .btn-delete {
+    flex: 1; /* Faz os botões dividirem o espaço */
+    padding: 0.6rem;
+    border-radius: 8px;
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.event-actions .btn-edit:hover {
+    background-color: #E3F2FD; /* Azul claro */
+    border-color: #90CAF9;
+}
+
+.event-actions .btn-delete:hover {
+    background-color: #FFEBEE; /* Rosa bem claro */
+    border-color: #EF9A9A;
+    color: #C62828; /* Vermelho escuro */
+}
+
+
+/* --- Media Queries para Telas Maiores (Tablet e Desktop) --- */
+@media (min-width: 600px) {
+    .events-grid {
+        /* Duas colunas para telas um pouco maiores */
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .events-grid {
+        /* Três colunas para telas de desktop */
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

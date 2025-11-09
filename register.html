@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Diário Pessoal</title>
+    <!-- Links para os arquivos CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login-register.css">
+</head>
+
+<body>
+
+    <main class="container">
+        <form id="register-form" class="auth-form">
+            <h1>Crie sua Conta</h1>
+            <p>Guarde seus momentos mais preciosos.</p>
+
+            <div class="form-group">
+                <label for="name">Nome</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <button type="submit" class="btn">Registrar</button>
+
+            <p class="switch-form">
+                Já tem uma conta? <a href="index.html">Faça login aqui</a>.
+            </p>
+        </form>
+    </main>
+
+    <script src="js/services/api.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+
+</html>

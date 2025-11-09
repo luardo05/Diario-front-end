@@ -1,0 +1,130 @@
+/* Importando uma fonte bonita do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Pacifico&display=swap');
+
+/* --- Variáveis de Cor --- */
+:root {
+    --primary-color: #E5A1AA;      /* Rosa principal, suave */
+    --primary-dark-color: #D18491; /* Rosa mais escuro para hover */
+    --background-color: #FFF8F9;   /* Fundo rosa bem clarinho, quase branco */
+    --text-color: #5D5D5D;         /* Cinza escuro para texto, mais suave que preto */
+    --card-background: #FFFFFF;    /* Branco puro para cards e inputs */
+    --border-color: #E0E0E0;       /* Cinza claro para bordas */
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Sombra suave */
+}
+
+/* --- Estilos Globais e Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* --- Layout Principal --- */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+/* --- Tipografia --- */
+h1 {
+    font-family: 'Pacifico', cursive; /* Fonte decorativa para títulos principais */
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+}
+
+/* --- Botões --- */
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 50px; /* Botões arredondados */
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: var(--primary-dark-color);
+    transform: translateY(-2px); /* Efeito de elevação */
+}
+
+.btn-secondary {
+    background-color: #f1f1f1;
+    color: var(--text-color);
+}
+.btn-secondary:hover {
+    background-color: #e0e0e0;
+}
+
+/* --- Formulários (Alto Contraste) --- */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+textarea {
+    width: 100%;
+    padding: 0.9rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--card-background); /* Fundo branco para contraste */
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color); /* Destaque rosa ao focar */
+    box-shadow: 0 0 0 3px rgba(229, 161, 170, 0.3);
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* --- Cabeçalho Principal (Página do Diário) --- */
+.main-header {
+    background-color: var(--card-background);
+    padding: 1rem 5%; /* Usa % para ser mais fluido */
+    box-shadow: var(--shadow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que os itens quebrem linha em telas pequenas */
+    gap: 1rem;
+}
+
+.main-header h1 {
+    margin-bottom: 0;
+}
