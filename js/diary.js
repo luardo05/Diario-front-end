@@ -59,7 +59,8 @@ if ('serviceWorker' in navigator) {
               window.location.href = 'index.html';
           });
       }
-  
+
+      
       // --- FUNÇÃO PARA BUSCAR E EXIBIR OS EVENTOS ---
       const loadEvents = async () => {
           const token = localStorage.getItem('token');
