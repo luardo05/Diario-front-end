@@ -12,6 +12,7 @@ if ('serviceWorker' in navigator) {
     });
   }
   
+  
   document.addEventListener('DOMContentLoaded', () => {
   
       const eventsContainer = document.getElementById('events-container');
