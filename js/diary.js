@@ -17,11 +17,10 @@ if ('serviceWorker' in navigator) {
       const eventsContainer = document.getElementById('events-container');
       const logoutButton = document.getElementById('logout-button');
   
-      // Listener de eventos no container pai para lidar com cliques nos botões de ação
+      // O listener para 'click' em 'eventsContainer' permanece o mesmo.
       eventsContainer.addEventListener('click', async (event) => {
-          const target = event.target; // O elemento exato que foi clicado
+          const target = event.target; 
   
-          // --- LÓGICA DE EXCLUSÃO ---
           if (target.classList.contains('btn-delete')) {
               const eventId = target.dataset.id;
               const isConfirmed = confirm('Tem certeza de que deseja excluir este registro? Esta ação não pode ser desfeita.');
@@ -43,7 +42,6 @@ if ('serviceWorker' in navigator) {
               }
           }
   
-          // --- LÓGICA DE EDIÇÃO (Navegação) ---
           if (target.classList.contains('btn-edit')) {
               const eventId = target.dataset.id;
               window.location.href = `event-form.html?id=${eventId}`;
@@ -51,7 +49,7 @@ if ('serviceWorker' in navigator) {
       });
   
   
-      // --- LÓGICA DE LOGOUT ---
+      // A lógica de 'logout' permanece a mesma.
       if (logoutButton) {
           logoutButton.addEventListener('click', () => {
               localStorage.removeItem('token');
@@ -84,21 +82,14 @@ if ('serviceWorker' in navigator) {
   
               const eventDate = new Date(event.date).toLocaleDateString('pt-BR', { timeZone: 'UTC' });
   
-              // --- CÓDIGO ALTERADO ---
-              // Cria uma variável para armazenar o HTML da imagem
+
               let imageHtml = ''; 
   
-              // Verifica se o campo 'photo' existe e não é uma string vazia
               if (event.photo) {
-                  const apiUrlWithoutApi = BASE_URL.endsWith('/api') ? BASE_URL.slice(0, -4) : BASE_URL;
-                  const imageUrl = `${apiUrlWithoutApi}/files/${event.photo}`;
-                  // Se a foto existir, a tag <img> é criada
+                  const imageUrl = event.photo;
                   imageHtml = `<img src="${imageUrl}" alt="Foto do evento: ${event.title}">`;
               }
-              // --- FIM DA ALTERAÇÃO ---
               
-              // Usa a variável imageHtml no template. Se não houver foto,
-              // a variável será uma string vazia e nenhuma tag <img> será renderizada.
               eventCard.innerHTML = `
                   ${imageHtml}
                   <div class="event-info">
@@ -116,6 +107,5 @@ if ('serviceWorker' in navigator) {
           });
       };
   
-      // --- INICIALIZAÇÃO ---
       loadEvents();
   });
